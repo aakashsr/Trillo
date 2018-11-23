@@ -39,6 +39,10 @@
         text-indent: 15px;
         transition: all .2s;
         margin-right: -3.5rem;
+        @media only screen and (max-width: $bp-smallest) {
+            margin-right: 0;
+        }
+
 
         &:focus {
             width: 100%;
@@ -49,7 +53,6 @@
         &::-webkit-input-placeholder {
             font-weight: 100;
             color: var(--color-grey-light-3);
-
         }
     }
 
@@ -302,7 +305,6 @@
 
         @media only screen and (max-width: $bp-smallest) {
             font-size: 1rem;
-            padding: .8rem 1.25rem;
         }
     }
 
@@ -357,7 +359,7 @@
         margin-bottom: -3px;
 
         @media only screen and (max-width: $bp-small) {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
         }
     }
 
@@ -479,13 +481,14 @@
 
 
         // Newer browsers - masks
-        @supports(-webkit-mask-image: url()) or (mask-image: url()){
-        background-color: var(--color-primary);
-        -webkit-mask-image: url(../img/chevron-thin-right.svg);
-        -webkit-mask-size: cover;
-        mask-image: url(../img/chevron-thin-right.svg);
-        mask-size: cover;
-        background-image:none;
+        @supports(-webkit-mask-image: url()) or (mask-image: url()) {
+            background-color: var(--color-primary);
+            -webkit-mask-image: url(../img/chevron-thin-right.svg);
+            -webkit-mask-size: cover;
+            mask-image: url(../img/chevron-thin-right.svg);
+            mask-size: cover;
+            background-image: none;
+        }
     }
 }
 
@@ -549,7 +552,7 @@
     }
 
     @media only screen and (max-width: $bp-smallest) {
-      padding: 1rem;
+        padding: 2rem;
     }
 
 
@@ -595,9 +598,9 @@
         font-weight: 300;
 
         @media only screen and (max-width: $bp-smallest) {
-           font-size: 1.75rem;
+            font-size: 1.75rem;
         }
-        
+
     }
 
     &::before {
@@ -634,7 +637,7 @@
         margin-bottom: 2.5rem;
 
         @media only screen and (max-width: $bp-smallest) {
-           font-size:1.25rem;
+            font-size: 1.25rem;
         }
     }
 }
@@ -656,7 +659,7 @@
     cursor: pointer;
 
     @media only screen and (max-width: $bp-smallest) {
-      font-size: 1.25rem;
+        font-size: 1.25rem;
     }
 
     &>* {
@@ -669,6 +672,7 @@
 
     &__visible {
         padding: 2rem 7.5rem;
+
         @media only screen and (max-width: $bp-smallest) {
             padding: 1.5rem 5.625rem;
         }
